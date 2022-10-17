@@ -104,6 +104,10 @@ namespace ES_project2
                 box_log_pass.isPassword = true;
             }
         }
-       
+
+        private void box_id_OnValueChanged(object sender, EventArgs e)
+        {
+            //ishu
+        }
     }
 }

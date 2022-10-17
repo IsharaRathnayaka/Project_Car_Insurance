@@ -143,6 +143,7 @@
             this.box_id.Size = new System.Drawing.Size(618, 45);
             this.box_id.TabIndex = 2;
             this.box_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.box_id.OnValueChanged += new System.EventHandler(this.box_id_OnValueChanged);
             // 
             // bunifuCustomLabel1
             // 
