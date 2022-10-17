@@ -20,20 +20,10 @@ namespace ES_project2
         public Form1()
         {
             InitializeComponent();
-            if (chkbox.Checked)
-            {
-                box_log_pass.isPassword = true;
-            }
-            else
-            {
-                box_log_pass.isPassword = false;
-            }
-            
+            box_log_pass.isPassword = true;         
         }
 
         
-
-
         private void log_tab_Click(object sender, EventArgs e)
         {
             line1.Left = regi_tab.Left;
@@ -103,6 +93,17 @@ namespace ES_project2
             this.Close();
         }
 
-      
+        private void chkbox_OnChange(object sender, EventArgs e)
+        {
+            if (chkbox.Checked)
+            {
+                box_log_pass.isPassword = false;
+            }
+            else
+            {
+                box_log_pass.isPassword = true;
+            }
+        }
+       
     }
 }

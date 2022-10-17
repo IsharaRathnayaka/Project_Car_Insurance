@@ -11,3 +11,15 @@ C:\Users\LUCKY\source\repos\ES_project2\ES_project2\obj\Debug\ES_project2.exe
 C:\Users\LUCKY\source\repos\ES_project2\ES_project2\obj\Debug\ES_project2.pdb
 C:\Users\LUCKY\source\repos\ES_project2\ES_project2\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\LUCKY\source\repos\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.CopyComplete
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\bin\Debug\ES_project2.exe.config
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\bin\Debug\ES_project2.exe
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\bin\Debug\ES_project2.pdb
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.AssemblyReference.cache
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.SuggestedBindingRedirects.cache
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Form1.resources
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Properties.Resources.resources
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.GenerateResource.cache
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.CoreCompileInputs.cache
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.CopyComplete
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.exe
+C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.pdb
