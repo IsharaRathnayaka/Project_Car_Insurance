@@ -107,7 +107,7 @@ namespace ES_project2
 
         private void box_id_OnValueChanged(object sender, EventArgs e)
         {
-            //ishu
+            //ish
         }
     }
 }
