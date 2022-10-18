@@ -189,7 +189,7 @@
             this.bt_login.Text = "LOGIN";
             this.bt_login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bt_login.Textcolor = System.Drawing.Color.White;
-            this.bt_login.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_login.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
             // 
             // regi_tab
