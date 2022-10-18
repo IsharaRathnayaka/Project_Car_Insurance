@@ -23,3 +23,12 @@ C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj
 C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.CopyComplete
 C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.exe
 C:\Users\LUCKY\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.pdb
+C:\Users\DELL\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.AssemblyReference.cache
+C:\Users\DELL\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.SuggestedBindingRedirects.cache
+C:\Users\DELL\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Form1.resources
+C:\Users\DELL\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Form2.resources
+C:\Users\DELL\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Properties.Resources.resources
+C:\Users\DELL\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.GenerateResource.cache
+C:\Users\DELL\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.exe
+C:\Users\DELL\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.pdb
