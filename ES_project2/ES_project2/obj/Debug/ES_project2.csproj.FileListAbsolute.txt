@@ -48,3 +48,18 @@ C:\Users\ASUS\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\
 C:\Users\ASUS\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.exe
 C:\Users\ASUS\Documents\GitHub\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.pdb
 >>>>>>> 9d57f3aefcceeee44ff09422734d001e703fb801
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\bin\Debug\ES_project2.exe.config
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\bin\Debug\ES_project2.exe
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\bin\Debug\ES_project2.pdb
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.AssemblyReference.cache
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.SuggestedBindingRedirects.cache
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Form1.resources
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Form2.resources
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Properties.Resources.resources
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.GenerateResource.cache
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.CoreCompileInputs.cache
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.csproj.CopyComplete
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.exe
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.pdb
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Login.resources
+C:\Users\LUCKY\Source\Repos\KavinduLakmal2000\Project_Insurance_C-\ES_project2\ES_project2\obj\Debug\ES_project2.Settings.resources
