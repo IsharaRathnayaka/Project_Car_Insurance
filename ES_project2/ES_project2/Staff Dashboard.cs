@@ -15,12 +15,11 @@ using System.Xml.Linq;
 
 namespace ES_project2
 {
-    public partial class Form1 : Form
+    public partial class Staff Dashboard : Form
     {
-        public Form2()
+        public Staff Dashboard()
         {
-            InitializeComponent();
-            box_log_pass.isPassword = true;         
+                  
         }
 
         
