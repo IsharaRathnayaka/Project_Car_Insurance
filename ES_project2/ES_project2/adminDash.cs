@@ -18,6 +18,7 @@ namespace ES_project2
         public adminDash()
         {
             InitializeComponent();
+            Pstaff.Visible = false;
             PanAdmin.Visible = true;    
         }
 
@@ -25,6 +26,7 @@ namespace ES_project2
         {
             line1.Left = regi_tab.Left;
             line1.Width = regi_tab.Width;
+            Pstaff.Visible = false;
             PanAdmin.Visible = true;
 
             //SlideA.Visible = false;
@@ -34,6 +36,9 @@ namespace ES_project2
         {
             line1.Left = log_tab.Left;
             line1.Width = log_tab.Width;
+            PanAdmin.Visible = false;
+            Pstaff.Visible = true;  
+
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -92,7 +97,7 @@ namespace ES_project2
                 {
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("data has been Updated!");
+                    MessageBox.Show("New Password is Set !");
                     conn.Close();
                 }
 
@@ -106,6 +111,12 @@ namespace ES_project2
             {
                 MessageBox.Show("Check Passwords Again !");
             }
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            Settings set = new Settings();
+            set.Show();
         }
     }
 }
