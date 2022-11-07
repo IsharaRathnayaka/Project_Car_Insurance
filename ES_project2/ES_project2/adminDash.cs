@@ -5,9 +5,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ES_project2
 {
@@ -70,6 +72,40 @@ namespace ES_project2
             AdminShow.DataSource = dt;
             conn.Close();
 
+        }
+
+        private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
+        {
+            String AdminID = Aid.Text;
+            String NPass = Npass.Text;
+            String CPass = cPass.Text;
+
+            if(NPass == CPass)
+            {
+                SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
+
+               
+                String insert = "UPDATE admin SET pass='"+NPass+"' WHERE id='"+AdminID+"'";
+                SqlCommand cmd = new SqlCommand(insert, conn);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("data has been Updated!");
+                    conn.Close();
+                }
+
+                catch (SqlException se)
+                {
+                    MessageBox.Show("Try Again !");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Check Passwords Again !");
+            }
         }
     }
 }
