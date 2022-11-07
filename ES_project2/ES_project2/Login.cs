@@ -47,7 +47,7 @@ namespace ES_project2
             String userid = box_id.Text;
             String userpass = box_log_pass.Text;
 
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LUCKY\source\repos\KavinduLakmal2000\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
 
 
             String res = userid.Substring(0, 1);
