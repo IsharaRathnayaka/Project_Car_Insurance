@@ -209,7 +209,7 @@ namespace ES_project2
         {
             String id = Uid.Text;
 
-            String insert = "DELETE FROM user WHERE id = '" + id + "'";
+            String insert = "DELETE FROM client WHERE uid = '" + id + "'";
             SqlCommand cmd = new SqlCommand(insert, conn);
 
             try
@@ -231,7 +231,7 @@ namespace ES_project2
             String id = Uid.Text;
             // chk staff
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM user WHERE id = '" + id + "'", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM client WHERE uid = '" + id + "'", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -244,11 +244,11 @@ namespace ES_project2
             String id = Uid.Text;
             // chk staff
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM vehicle_data WHERE id = '" + id + "'", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM v_data WHERE vid = '" + id + "'", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            userData.DataSource = dt;
+            Vdata.DataSource = dt;
             conn.Close();
         }
     }

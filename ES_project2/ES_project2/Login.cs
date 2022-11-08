@@ -23,25 +23,6 @@ namespace ES_project2
             box_log_pass.isPassword = true;         
         }
 
-        
-        private void log_tab_Click(object sender, EventArgs e)
-        {
-            line1.Left = regi_tab.Left;
-            line1.Width = regi_tab.Width;
-
-            SlideA.Visible = false;
-            //SlideB.Visible = false;
-        }
-
-        private void log_tab_Click_1(object sender, EventArgs e)
-        {
-            line1.Left = log_tab.Left;
-            line1.Width = log_tab.Width;
-
-            SlideA.Visible = true;
-            //SlideB.Visible = false;
-        }
-
         private void bt_login_Click(object sender, EventArgs e)
         {
             String userid = box_id.Text;

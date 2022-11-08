@@ -38,9 +38,7 @@
             this.box_id = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bt_login = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.regi_tab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.line1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.log_tab = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.SlideA.SuspendLayout();
@@ -52,7 +50,6 @@
             // 
             this.SlideA.Controls.Add(this.bunifuCustomLabel4);
             this.SlideA.Controls.Add(this.chkbox);
-            this.SlideA.Controls.Add(this.bunifuCustomLabel3);
             this.SlideA.Controls.Add(this.box_log_pass);
             this.SlideA.Controls.Add(this.bunifuCustomLabel2);
             this.SlideA.Controls.Add(this.box_id);
@@ -68,7 +65,7 @@
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(34, 320);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(31, 280);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(139, 24);
             this.bunifuCustomLabel4.TabIndex = 7;
@@ -81,7 +78,7 @@
             this.chkbox.Checked = false;
             this.chkbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.chkbox.ForeColor = System.Drawing.Color.White;
-            this.chkbox.Location = new System.Drawing.Point(7, 324);
+            this.chkbox.Location = new System.Drawing.Point(4, 284);
             this.chkbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkbox.Name = "chkbox";
             this.chkbox.Size = new System.Drawing.Size(20, 20);
@@ -93,7 +90,7 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(167, 10);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(218, 88);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(296, 51);
             this.bunifuCustomLabel3.TabIndex = 5;
@@ -109,7 +106,7 @@
             this.box_log_pass.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_log_pass.ForeColor = System.Drawing.Color.White;
             this.box_log_pass.isPassword = false;
-            this.box_log_pass.Location = new System.Drawing.Point(7, 271);
+            this.box_log_pass.Location = new System.Drawing.Point(4, 231);
             this.box_log_pass.Margin = new System.Windows.Forms.Padding(4);
             this.box_log_pass.Name = "box_log_pass";
             this.box_log_pass.Size = new System.Drawing.Size(618, 45);
@@ -121,7 +118,7 @@
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(3, 243);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(0, 203);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(99, 24);
             this.bunifuCustomLabel2.TabIndex = 3;
@@ -137,7 +134,7 @@
             this.box_id.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_id.ForeColor = System.Drawing.Color.White;
             this.box_id.isPassword = false;
-            this.box_id.Location = new System.Drawing.Point(7, 158);
+            this.box_id.Location = new System.Drawing.Point(4, 94);
             this.box_id.Margin = new System.Windows.Forms.Padding(4);
             this.box_id.Name = "box_id";
             this.box_id.Size = new System.Drawing.Size(618, 45);
@@ -150,7 +147,7 @@
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(3, 130);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 66);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(110, 24);
             this.bunifuCustomLabel1.TabIndex = 1;
@@ -192,92 +189,18 @@
             this.bt_login.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
             // 
-            // regi_tab
-            // 
-            this.regi_tab.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.regi_tab.BackColor = System.Drawing.Color.Transparent;
-            this.regi_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.regi_tab.BorderRadius = 0;
-            this.regi_tab.ButtonText = "SIGN UP";
-            this.regi_tab.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.regi_tab.DisabledColor = System.Drawing.Color.Gray;
-            this.regi_tab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regi_tab.Iconcolor = System.Drawing.Color.Transparent;
-            this.regi_tab.Iconimage = null;
-            this.regi_tab.Iconimage_right = null;
-            this.regi_tab.Iconimage_right_Selected = null;
-            this.regi_tab.Iconimage_Selected = null;
-            this.regi_tab.IconMarginLeft = 0;
-            this.regi_tab.IconMarginRight = 0;
-            this.regi_tab.IconRightVisible = true;
-            this.regi_tab.IconRightZoom = 0D;
-            this.regi_tab.IconVisible = true;
-            this.regi_tab.IconZoom = 90D;
-            this.regi_tab.IsTab = false;
-            this.regi_tab.Location = new System.Drawing.Point(176, 103);
-            this.regi_tab.Margin = new System.Windows.Forms.Padding(5);
-            this.regi_tab.Name = "regi_tab";
-            this.regi_tab.Normalcolor = System.Drawing.Color.Transparent;
-            this.regi_tab.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.regi_tab.OnHoverTextColor = System.Drawing.Color.White;
-            this.regi_tab.selected = false;
-            this.regi_tab.Size = new System.Drawing.Size(158, 50);
-            this.regi_tab.TabIndex = 1;
-            this.regi_tab.Text = "SIGN UP";
-            this.regi_tab.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.regi_tab.Textcolor = System.Drawing.Color.White;
-            this.regi_tab.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regi_tab.Click += new System.EventHandler(this.log_tab_Click);
-            // 
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.Transparent;
             this.line1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.line1.LineThickness = 6;
-            this.line1.Location = new System.Drawing.Point(176, 162);
+            this.line1.Location = new System.Drawing.Point(44, 175);
             this.line1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(158, 13);
+            this.line1.Size = new System.Drawing.Size(625, 13);
             this.line1.TabIndex = 2;
             this.line1.Transparency = 255;
             this.line1.Vertical = false;
-            // 
-            // log_tab
-            // 
-            this.log_tab.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.log_tab.BackColor = System.Drawing.Color.Transparent;
-            this.log_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.log_tab.BorderRadius = 0;
-            this.log_tab.ButtonText = "SIGN IN";
-            this.log_tab.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.log_tab.DisabledColor = System.Drawing.Color.Gray;
-            this.log_tab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.log_tab.Iconcolor = System.Drawing.Color.Transparent;
-            this.log_tab.Iconimage = null;
-            this.log_tab.Iconimage_right = null;
-            this.log_tab.Iconimage_right_Selected = null;
-            this.log_tab.Iconimage_Selected = null;
-            this.log_tab.IconMarginLeft = 0;
-            this.log_tab.IconMarginRight = 0;
-            this.log_tab.IconRightVisible = true;
-            this.log_tab.IconRightZoom = 0D;
-            this.log_tab.IconVisible = true;
-            this.log_tab.IconZoom = 90D;
-            this.log_tab.IsTab = false;
-            this.log_tab.Location = new System.Drawing.Point(382, 103);
-            this.log_tab.Margin = new System.Windows.Forms.Padding(5);
-            this.log_tab.Name = "log_tab";
-            this.log_tab.Normalcolor = System.Drawing.Color.Transparent;
-            this.log_tab.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.log_tab.OnHoverTextColor = System.Drawing.Color.White;
-            this.log_tab.selected = false;
-            this.log_tab.Size = new System.Drawing.Size(158, 50);
-            this.log_tab.TabIndex = 3;
-            this.log_tab.Text = "SIGN IN";
-            this.log_tab.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.log_tab.Textcolor = System.Drawing.Color.White;
-            this.log_tab.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.log_tab.Click += new System.EventHandler(this.log_tab_Click_1);
             // 
             // bunifuImageButton1
             // 
@@ -312,12 +235,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(720, 792);
+            this.ClientSize = new System.Drawing.Size(720, 770);
             this.Controls.Add(this.bunifuImageButton2);
             this.Controls.Add(this.bunifuImageButton1);
-            this.Controls.Add(this.log_tab);
+            this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.line1);
-            this.Controls.Add(this.regi_tab);
             this.Controls.Add(this.SlideA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
@@ -328,6 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -340,9 +263,7 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox box_log_pass;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuFlatButton regi_tab;
         private Bunifu.Framework.UI.BunifuSeparator line1;
-        private Bunifu.Framework.UI.BunifuFlatButton log_tab;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuCheckbox chkbox;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
