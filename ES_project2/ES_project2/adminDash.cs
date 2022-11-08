@@ -20,19 +20,20 @@ namespace ES_project2
            
             InitializeComponent();
             Pstaff.Visible = false;
+            pUser.Visible = false;
             PanAdmin.Visible = true;    
         }
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
 
-
+        //.//////////////////////////////////////////////////////////////// top button set //////////////////////////////////
         private void regi_tab_Click(object sender, EventArgs e)
         {
             line1.Left = regi_tab.Left;
             line1.Width = regi_tab.Width;
             Pstaff.Visible = false;
+            pUser.Visible = false;
             PanAdmin.Visible = true;
 
-            //SlideA.Visible = false;
         }
 
         private void log_tab_Click(object sender, EventArgs e)
@@ -40,7 +41,8 @@ namespace ES_project2
             line1.Left = log_tab.Left;
             line1.Width = log_tab.Width;
             PanAdmin.Visible = false;
-            Pstaff.Visible = true;  
+            Pstaff.Visible = true;
+            pUser.Visible = false;
 
         }
 
@@ -53,6 +55,10 @@ namespace ES_project2
         {
             line1.Left = del.Left;
             line1.Width = log_tab.Width;
+
+            PanAdmin.Visible = false;
+            Pstaff.Visible = false;
+            pUser.Visible = true;
         }
 
         private void chkData_Click(object sender, EventArgs e)
@@ -68,6 +74,7 @@ namespace ES_project2
             line1.Width = log_tab.Width;
         }
 
+        ///........................................................................admin panel ........................................
         private void bt_login_Click(object sender, EventArgs e)
         {
             
@@ -124,7 +131,7 @@ namespace ES_project2
             Settings set = new Settings();
             set.Show();
         }
-
+        //......................................................................................Staff panel ................................
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
             // delete staff
@@ -152,8 +159,7 @@ namespace ES_project2
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
-           // SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
-
+           
             String id = Sid.Text;
             // chk staff
             conn.Open();
@@ -183,7 +189,7 @@ namespace ES_project2
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Staff Member Has been removed!");
+                MessageBox.Show("Staff Member data been updated!");
                 conn.Close();
             }
 
@@ -197,6 +203,53 @@ namespace ES_project2
         private void StaffShow_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        //...........................................................................User panel ..........................................
+        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        {
+            String id = Uid.Text;
+
+            String insert = "DELETE FROM user WHERE id = '" + id + "'";
+            SqlCommand cmd = new SqlCommand(insert, conn);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("User Has been removed!");
+                conn.Close();
+            }
+
+            catch (SqlException se)
+            {
+                MessageBox.Show("Try Again!" + se);
+            }
+        }
+
+        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        {
+            String id = Uid.Text;
+            // chk staff
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM user WHERE id = '" + id + "'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            userData.DataSource = dt;
+            conn.Close();
+        }
+
+        private void bunifuFlatButton2_Click_1(object sender, EventArgs e)
+        {
+            String id = Uid.Text;
+            // chk staff
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM vehicle_data WHERE id = '" + id + "'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            userData.DataSource = dt;
+            conn.Close();
         }
     }
 }
