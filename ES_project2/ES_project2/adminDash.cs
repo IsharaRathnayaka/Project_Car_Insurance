@@ -17,10 +17,13 @@ namespace ES_project2
     {
         public adminDash()
         {
+           
             InitializeComponent();
             Pstaff.Visible = false;
             PanAdmin.Visible = true;    
         }
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
+
 
         private void regi_tab_Click(object sender, EventArgs e)
         {
@@ -67,8 +70,7 @@ namespace ES_project2
 
         private void bt_login_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
-
+            
             conn.Open();
             SqlCommand cmd = new SqlCommand("select * from admin", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -87,8 +89,7 @@ namespace ES_project2
 
             if(NPass == CPass)
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
-
+              
                
                 String insert = "UPDATE admin SET pass='"+NPass+"' WHERE id='"+AdminID+"'";
                 SqlCommand cmd = new SqlCommand(insert, conn);
@@ -103,7 +104,7 @@ namespace ES_project2
 
                 catch (SqlException se)
                 {
-                    MessageBox.Show("Try Again !");
+                    MessageBox.Show("Try Again !" + se);
                 }
 
             }
@@ -115,8 +116,87 @@ namespace ES_project2
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
             Settings set = new Settings();
             set.Show();
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            // delete staff
+            String id = Sid.Text;
+
+          
+
+            String insert = "DELETE FROM staff WHERE id = '"+id+"'";
+            SqlCommand cmd = new SqlCommand(insert, conn);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Staff Member Has been removed!");
+                conn.Close();
+            }
+
+            catch (SqlException se)
+            {
+                MessageBox.Show("Try Again!" + se);
+            }
+
+        }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+           // SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
+
+            String id = Sid.Text;
+            // chk staff
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM staff WHERE id = '"+id+"'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            StaffShow.DataSource = dt;
+            conn.Close();
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            //update staff
+
+            String id = Sid.Text;
+            String name = fname.Text;
+            String Pass = pass.Text;
+            String Email = mail.Text;
+            String Address = adres.Text;
+
+
+            String insert = "UPDATE staff SET fname = '"+name+"', Email = '"+Email+"' , Password = '"+Pass+"' , Address = '"+Address+"'  WHERE id = '"+id+"' ";
+            SqlCommand cmd = new SqlCommand(insert, conn);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Staff Member Has been removed!");
+                conn.Close();
+            }
+
+            catch (SqlException se)
+            {
+                MessageBox.Show("Try Again!" + se);
+            }
+
+        }
+
+        private void StaffShow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
