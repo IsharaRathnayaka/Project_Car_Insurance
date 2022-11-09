@@ -132,7 +132,7 @@ namespace ES_project2
                 {
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("New Password is Set !");
+                    MessageBox.Show("New Password is Set!");
                     conn.Close();
                 }
 
@@ -192,9 +192,9 @@ namespace ES_project2
                 conn.Close();
             }
 
-            catch (SqlException se)
+            catch (SqlException)
             {
-                MessageBox.Show("Try Again!" + se);
+                MessageBox.Show("Member removing failed! try again!");
             }
 
         }
@@ -235,9 +235,9 @@ namespace ES_project2
                 conn.Close();
             }
 
-            catch (SqlException se)
+            catch (SqlException)
             {
-                MessageBox.Show("Try Again!" + se);
+                MessageBox.Show("Data updating failed! try again!");
             }
 
         }
@@ -258,13 +258,13 @@ namespace ES_project2
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("User Has been removed!");
+                MessageBox.Show("Client Has been removed!");
                 conn.Close();
             }
 
-            catch (SqlException se)
+            catch (SqlException)
             {
-                MessageBox.Show("Try Again!" + se);
+                MessageBox.Show("Client removing failed! Try Again!");
             }
         }
 
@@ -362,6 +362,14 @@ namespace ES_project2
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
             //info 
+        }
+
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            this.Close();
+            log.Show();
+
         }
     }
 }
