@@ -16,6 +16,7 @@ namespace ES_project2
         public staffDash()
         {
             InitializeComponent();
+            pUser.Visible = false;
 
             P_staff.Visible = true;
         }
@@ -27,6 +28,7 @@ namespace ES_project2
         {
             line1.Left = regi_tab.Left;
             line1.Width = regi_tab.Width;
+            pUser.Visible = false;
 
             P_staff.Visible = true;
         }
@@ -35,6 +37,8 @@ namespace ES_project2
         {
             line1.Left = tab2.Left;
             line1.Width = regi_tab.Width;
+
+            pUser.Visible = true;
         }
 
         private void tab3_Click(object sender, EventArgs e)
@@ -119,6 +123,53 @@ namespace ES_project2
             else
             {
                 MessageBox.Show("Passwords does not match!");
+            }
+        }
+        //..................................................................... client panel...............................................
+        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        {
+            String id = Uid.Text;
+            // chk staff
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM client WHERE uid = '" + id + "'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            userData.DataSource = dt;
+            conn.Close();
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            String id = Uid.Text;
+            // chk staff
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM v_data WHERE vid = '" + id + "'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            Vdata.DataSource = dt;
+            conn.Close();
+        }
+
+        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        {
+            String id = Uid.Text;
+
+            String insert = "DELETE FROM client WHERE uid = '" + id + "'";
+            SqlCommand cmd = new SqlCommand(insert, conn);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("client Has been removed!");
+                conn.Close();
+            }
+
+            catch (SqlException)
+            {
+                MessageBox.Show("Client remove failed! try again!");
             }
         }
     }
