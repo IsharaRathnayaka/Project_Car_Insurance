@@ -20,18 +20,23 @@ namespace ES_project2
            
             InitializeComponent();
             Pstaff.Visible = false;
+            P_staffregi.Visible = false;
+            data_display.Visible = false;
             pUser.Visible = false;
             PanAdmin.Visible = true;    
         }
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
 
-        //.//////////////////////////////////////////////////////////////// top button set //////////////////////////////////
+        //.//////////////////////////////////////////////////////////////// top button set /////////////////////////////////////////////////
         private void regi_tab_Click(object sender, EventArgs e)
         {
             line1.Left = regi_tab.Left;
             line1.Width = regi_tab.Width;
             Pstaff.Visible = false;
+            P_staffregi.Visible = false;
+            data_display.Visible = false;
             pUser.Visible = false;
+
             PanAdmin.Visible = true;
 
         }
@@ -41,8 +46,11 @@ namespace ES_project2
             line1.Left = log_tab.Left;
             line1.Width = log_tab.Width;
             PanAdmin.Visible = false;
-            Pstaff.Visible = true;
+            P_staffregi.Visible = false;
+            data_display.Visible = false;
             pUser.Visible = false;
+
+            Pstaff.Visible = true;
 
         }
 
@@ -57,7 +65,10 @@ namespace ES_project2
             line1.Width = log_tab.Width;
 
             PanAdmin.Visible = false;
+            P_staffregi.Visible = false;
+            data_display.Visible = false;
             Pstaff.Visible = false;
+
             pUser.Visible = true;
         }
 
@@ -65,6 +76,14 @@ namespace ES_project2
         {
             line1.Left = regi.Left;
             line1.Width = log_tab.Width;
+
+            PanAdmin.Visible = false;
+            Pstaff.Visible = false;
+            pUser.Visible = false;
+            data_display.Visible = false;
+
+            P_staffregi.Visible = true;
+            
             // chkData
         }
 
@@ -72,7 +91,15 @@ namespace ES_project2
         {
             line1.Left = chkData.Left;
             line1.Width = log_tab.Width;
+
+            PanAdmin.Visible = false;
+            Pstaff.Visible = false;
+            pUser.Visible = false;
+            P_staffregi.Visible = false;
+
+            data_display.Visible = true;
         }
+       
 
         ///........................................................................admin panel ........................................
         private void bt_login_Click(object sender, EventArgs e)
@@ -119,6 +146,21 @@ namespace ES_project2
             {
                 MessageBox.Show("Check Passwords Again !");
             }
+        }
+
+        private void bunifuFlatButton8_Click(object sender, EventArgs e)
+        {
+            String AdminID = Aid.Text;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT '"+AdminID+"', pass FROM admin", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            AdminShow.DataSource = dt;
+            conn.Close();
+
+           
+
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
@@ -250,6 +292,76 @@ namespace ES_project2
             sda.Fill(dt);
             Vdata.DataSource = dt;
             conn.Close();
+        }
+        //........................................................................ staff register panel .....................................................................
+        private void bunifuFlatButton11_Click(object sender, EventArgs e)
+        {
+            String sid = staffid.Text;
+            String fname = firstN.Text;
+            String lname = lastN.Text;
+            String mail = email.Text;
+            String adres = add.Text;
+            String pass1 = f_pass.Text;
+            String pass2 = con_pass.Text;
+            String birth_d = b_day.Value.ToString();
+
+            if (pass1 == pass2) {
+
+                //MessageBox.Show(birth_d);
+                String insert = "INSERT INTO staff VALUES ('" + sid + "' ,'" + fname + "', '" + lname + "', '" + mail + "' , '"+pass1+"' , '"+adres+"', '"+birth_d+"' )";
+                SqlCommand cmd = new SqlCommand(insert, conn);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Staff Member has been Registered!");
+                    conn.Close();
+                }
+
+                catch (SqlException)
+                {
+                    MessageBox.Show("Data can not be upload & try again!");
+                }
+
+            }
+
+            else
+            {
+                MessageBox.Show("Check both passwords & try again!");
+            }
+
+        }
+        //....................................................................... check all panel ................................................................................................
+
+        private void bunifuFlatButton9_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM admin", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            A_data.DataSource = dt;
+
+            SqlCommand cmd2 = new SqlCommand("SELECT * FROM staff", conn);
+            SqlDataAdapter sda2 = new SqlDataAdapter(cmd2);
+            DataTable dt2 = new DataTable();
+            sda2.Fill(dt2);
+            S_data.DataSource = dt2;
+
+            SqlCommand cmd3 = new SqlCommand("SELECT * FROM client", conn);
+            SqlDataAdapter sda3 = new SqlDataAdapter(cmd3);
+            DataTable dt3 = new DataTable();
+            sda3.Fill(dt3);
+            U_data.DataSource = dt3;
+
+            conn.Close();
+        }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            //info 
         }
     }
 }
