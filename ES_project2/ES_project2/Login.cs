@@ -39,7 +39,7 @@ namespace ES_project2
                 /////////////////////////////////////////////for admin login ///////////////////////////////////////////
                 
 
-                String chkquery = "select * from admin where id = '" + box_id.Text.Trim() + "' and pass = '" + box_log_pass.Text.Trim() + "'";
+                String chkquery = "select * from admin where id = '" + box_id.Text.Trim() + "' and password = '" + box_log_pass.Text.Trim() + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(chkquery, conn);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);

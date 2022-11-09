@@ -136,9 +136,9 @@ namespace ES_project2
                     conn.Close();
                 }
 
-                catch (SqlException se)
+                catch (SqlException)
                 {
-                    MessageBox.Show("Try Again !" + se);
+                    MessageBox.Show("Password reset is failed! try again!");
                 }
 
             }
