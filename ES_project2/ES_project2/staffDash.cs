@@ -17,6 +17,7 @@ namespace ES_project2
         {
             InitializeComponent();
             pUser.Visible = false;
+            U_regi_panel.Visible = false;
 
             P_staff.Visible = true;
         }
@@ -29,6 +30,7 @@ namespace ES_project2
             line1.Left = regi_tab.Left;
             line1.Width = regi_tab.Width;
             pUser.Visible = false;
+            U_regi_panel.Visible = false;
 
             P_staff.Visible = true;
         }
@@ -37,6 +39,8 @@ namespace ES_project2
         {
             line1.Left = tab2.Left;
             line1.Width = regi_tab.Width;
+            U_regi_panel.Visible = false;
+            P_staff.Visible = false;
 
             pUser.Visible = true;
         }
@@ -45,7 +49,12 @@ namespace ES_project2
         {
             line1.Left = tab3.Left;
             line1.Width = regi_tab.Width;
+            pUser.Visible = false;
+            P_staff.Visible = false;
+
+            U_regi_panel.Visible = true;
         }
+
 
         private void tab4_Click(object sender, EventArgs e)
         {
@@ -126,7 +135,9 @@ namespace ES_project2
             }
         }
         //..................................................................... client panel...............................................
-        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+     
+
+        private void bunifuFlatButton6_Click_1(object sender, EventArgs e)
         {
             String id = Uid.Text;
             // chk staff
@@ -139,7 +150,7 @@ namespace ES_project2
             conn.Close();
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        private void bunifuFlatButton2_Click_1(object sender, EventArgs e)
         {
             String id = Uid.Text;
             // chk staff
@@ -152,7 +163,7 @@ namespace ES_project2
             conn.Close();
         }
 
-        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        private void bunifuFlatButton7_Click_1(object sender, EventArgs e)
         {
             String id = Uid.Text;
 
@@ -171,6 +182,48 @@ namespace ES_project2
             {
                 MessageBox.Show("Client remove failed! try again!");
             }
+        }
+
+        //......................................................................client register...........................................
+
+        private void bunifuFlatButton11_Click(object sender, EventArgs e)
+        {
+            String uid = U_id.Text;
+            String fname = f_name.Text;
+            String lname = l_name.Text;
+            String mail = email.Text;
+            String adres = add.Text;
+            String pass1 = f_pass.Text;
+            String pass2 = con_pass.Text;
+            String birth_d = b_day.Value.ToString();
+
+            if (pass1 == pass2)
+            {
+
+
+                String insert = "INSERT INTO client VALUES ('" + uid + "' ,'" + fname + "', '" + lname + "', '" + pass1 + "' , '" + birth_d + "' , '" + mail + "', '" + adres + "' )";
+                SqlCommand cmd = new SqlCommand(insert, conn);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Client has been Registered!");
+                    conn.Close();
+                }
+
+                catch (SqlException es)
+                {
+                    MessageBox.Show("Data can not be upload & try again!"+ es);
+                }
+
+            }
+
+            else
+            {
+                MessageBox.Show("Check both passwords & try again!");
+            }
+
         }
     }
 }
