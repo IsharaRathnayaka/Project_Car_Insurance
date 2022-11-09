@@ -37,7 +37,7 @@ namespace ES_project2
             {
 
                 /////////////////////////////////////////////for admin login ///////////////////////////////////////////
-                MessageBox.Show("this is admin");
+                
 
                 String chkquery = "select * from admin where id = '" + box_id.Text.Trim() + "' and pass = '" + box_log_pass.Text.Trim() + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(chkquery, conn);
@@ -46,11 +46,15 @@ namespace ES_project2
 
                 if (dt.Rows.Count == 1)
                 {
-                    MessageBox.Show("Login done !");
+                   MessageBox.Show("Admin Login successful!");
+                   adminDash ad = new adminDash();
+                   ad.Show();
+                   this.Hide();
+
                 }
                 else
                 {
-                    MessageBox.Show("check your password and User name and try again !");
+                    MessageBox.Show("check your password & ID then try again!");
                 }
                
             }

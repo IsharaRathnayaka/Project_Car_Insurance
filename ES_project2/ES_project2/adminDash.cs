@@ -125,7 +125,7 @@ namespace ES_project2
             {
               
                
-                String insert = "UPDATE admin SET pass='"+NPass+"' WHERE id='"+AdminID+"'";
+                String insert = "UPDATE admin SET password='"+NPass+"' WHERE id='"+AdminID+"'";
                 SqlCommand cmd = new SqlCommand(insert, conn);
 
                 try
@@ -152,7 +152,7 @@ namespace ES_project2
         {
             String AdminID = Aid.Text;
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT '"+AdminID+"', pass FROM admin", conn);
+            SqlCommand cmd = new SqlCommand("SELECT '"+AdminID+"', password FROM admin", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -224,7 +224,7 @@ namespace ES_project2
             String Address = adres.Text;
 
 
-            String insert = "UPDATE staff SET fname = '"+name+"', Email = '"+Email+"' , Password = '"+Pass+"' , Address = '"+Address+"'  WHERE id = '"+id+"' ";
+            String insert = "UPDATE staff SET First_name = '"+name+"', Email = '"+Email+"' , Password = '"+Pass+"' , Address = '"+Address+"'  WHERE id = '"+id+"' ";
             SqlCommand cmd = new SqlCommand(insert, conn);
 
             try
@@ -307,7 +307,7 @@ namespace ES_project2
 
             if (pass1 == pass2) {
 
-                //MessageBox.Show(birth_d);
+                
                 String insert = "INSERT INTO staff VALUES ('" + sid + "' ,'" + fname + "', '" + lname + "', '" + mail + "' , '"+pass1+"' , '"+adres+"', '"+birth_d+"' )";
                 SqlCommand cmd = new SqlCommand(insert, conn);
 
