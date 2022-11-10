@@ -1,21 +1,27 @@
-﻿using System;
+﻿using Bunifu.Framework.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Bunifu;
 
 namespace ES_project2
 {
+    
     public partial class staffDash : Form
     {
+        public static string send_id = "";
         public staffDash()
         {
             InitializeComponent();
@@ -23,8 +29,10 @@ namespace ES_project2
             U_regi_panel.Visible = false;
             panel_v.Visible = false;
             data_display.Visible = false;
+            claimP.Visible = false;
 
             P_staff.Visible = true;
+
         }
 
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
@@ -38,6 +46,7 @@ namespace ES_project2
             U_regi_panel.Visible = false;
             panel_v.Visible = false;
             data_display.Visible = false;
+            claimP.Visible = false;
 
             P_staff.Visible = true;
         }
@@ -50,6 +59,7 @@ namespace ES_project2
             P_staff.Visible = false;
             panel_v.Visible = false;
             data_display.Visible = false;
+            claimP.Visible = false;
 
             pUser.Visible = true;
         }
@@ -62,6 +72,7 @@ namespace ES_project2
             P_staff.Visible = false;
             panel_v.Visible = false;
             data_display.Visible = false;
+            claimP.Visible = false;
 
             U_regi_panel.Visible = true;
         }
@@ -76,6 +87,7 @@ namespace ES_project2
             P_staff.Visible = false;
             panel_v.Visible = false;
             U_regi_panel.Visible = false;
+            claimP.Visible = false;
 
             data_display.Visible = true;
         }
@@ -90,6 +102,8 @@ namespace ES_project2
             panel_v.Visible = false;
             U_regi_panel.Visible = false;
             data_display.Visible = false;
+
+            claimP.Visible = true;
 
         }
 
@@ -241,6 +255,7 @@ namespace ES_project2
                     P_staff.Visible = false;
                     U_regi_panel.Visible = false;
                     data_display.Visible = false;
+                    claimP.Visible = false;
                     panel_v.Visible = true;
 
                     conn.Close();
@@ -276,6 +291,7 @@ namespace ES_project2
 
             String start = start_day.Value.ToString();
             String end = end_day.Value.ToString();
+   
 
             String insert = "INSERT INTO v_data VALUES ('" + Vid + "' ,'" + Vtype + "', '" + Enum + "', '" + Chassi + "' , '" + start + "' , '" + end + "', '" + Vvalue + "' , '"+Vmodel+"' )";
             SqlCommand cmd = new SqlCommand(insert, conn);
@@ -291,6 +307,7 @@ namespace ES_project2
                 U_regi_panel.Visible = true;
                 panel_v.Visible = false;
                 data_display.Visible = false;
+                claimP.Visible = false;
 
                 //..................textBox.Clear(); does not work on bunifu.............
                 //..................so i use this........................................
@@ -302,7 +319,7 @@ namespace ES_project2
                 f_pass.Text = "";
                 con_pass.Text = "";
 
-
+                
 
                 conn.Close();
             }
@@ -317,6 +334,8 @@ namespace ES_project2
         //............................................................................................check all user data.......................
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
+            
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM client", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -328,6 +347,34 @@ namespace ES_project2
             DataTable dt1 = new DataTable();
             sda1.Fill(dt1);
             Vehi_data.DataSource = dt1;
+
+            
+
+        }
+
+        private void bunifuFlatButton8_Click(object sender, EventArgs e)
+        {
+            
+            String FirstN = fname.Text;
+            String LastN = lname.Text;
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM client Where First_name = '"+FirstN+"' AND Last_name = '"+LastN+"' ", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            cust_data.DataSource = dt;
+
+           
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            send_id = cust_id.Text;
+
+            claim claim = new claim();
+            claim.Show();
         }
     }
 }
+
+
