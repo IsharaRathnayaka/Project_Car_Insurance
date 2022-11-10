@@ -1224,7 +1224,6 @@
             this.P_staffregi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(65)))), ((int)(((byte)(94)))));
             this.P_staffregi.Controls.Add(this.bunifuCustomLabel22);
             this.P_staffregi.Controls.Add(this.bunifuCustomLabel19);
-            this.P_staffregi.Controls.Add(this.data_display);
             this.P_staffregi.Controls.Add(this.b_day);
             this.P_staffregi.Controls.Add(this.add);
             this.P_staffregi.Controls.Add(this.con_pass);
@@ -1278,7 +1277,7 @@
             this.data_display.Controls.Add(this.A_data);
             this.data_display.Controls.Add(this.bunifuCustomLabel27);
             this.data_display.Controls.Add(this.bunifuFlatButton9);
-            this.data_display.Location = new System.Drawing.Point(0, 0);
+            this.data_display.Location = new System.Drawing.Point(123, 194);
             this.data_display.Name = "data_display";
             this.data_display.Size = new System.Drawing.Size(1084, 539);
             this.data_display.TabIndex = 28;
@@ -1724,6 +1723,7 @@
             this.ClientSize = new System.Drawing.Size(1255, 801);
             this.Controls.Add(this.bunifuCustomLabel23);
             this.Controls.Add(this.bunifuImageButton5);
+            this.Controls.Add(this.data_display);
             this.Controls.Add(this.P_staffregi);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pUser);

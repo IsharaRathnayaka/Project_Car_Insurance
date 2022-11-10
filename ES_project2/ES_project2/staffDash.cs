@@ -5,9 +5,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ES_project2
 {
@@ -18,6 +21,8 @@ namespace ES_project2
             InitializeComponent();
             pUser.Visible = false;
             U_regi_panel.Visible = false;
+            panel_v.Visible = false;
+            data_display.Visible = false;
 
             P_staff.Visible = true;
         }
@@ -31,6 +36,8 @@ namespace ES_project2
             line1.Width = regi_tab.Width;
             pUser.Visible = false;
             U_regi_panel.Visible = false;
+            panel_v.Visible = false;
+            data_display.Visible = false;
 
             P_staff.Visible = true;
         }
@@ -41,6 +48,8 @@ namespace ES_project2
             line1.Width = regi_tab.Width;
             U_regi_panel.Visible = false;
             P_staff.Visible = false;
+            panel_v.Visible = false;
+            data_display.Visible = false;
 
             pUser.Visible = true;
         }
@@ -51,6 +60,8 @@ namespace ES_project2
             line1.Width = regi_tab.Width;
             pUser.Visible = false;
             P_staff.Visible = false;
+            panel_v.Visible = false;
+            data_display.Visible = false;
 
             U_regi_panel.Visible = true;
         }
@@ -60,12 +71,26 @@ namespace ES_project2
         {
             line1.Left = tab4.Left;
             line1.Width = regi_tab.Width;
+
+            pUser.Visible = false;
+            P_staff.Visible = false;
+            panel_v.Visible = false;
+            U_regi_panel.Visible = false;
+
+            data_display.Visible = true;
         }
 
         private void tab5_Click(object sender, EventArgs e)
         {
             line1.Left = tab5.Left;
             line1.Width = regi_tab.Width;
+
+            pUser.Visible = false;
+            P_staff.Visible = false;
+            panel_v.Visible = false;
+            U_regi_panel.Visible = false;
+            data_display.Visible = false;
+
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -189,6 +214,8 @@ namespace ES_project2
         private void bunifuFlatButton11_Click(object sender, EventArgs e)
         {
             String uid = U_id.Text;
+            V_id.Text=uid;
+
             String fname = f_name.Text;
             String lname = l_name.Text;
             String mail = email.Text;
@@ -208,13 +235,22 @@ namespace ES_project2
                 {
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Client has been Registered!");
+                    MessageBox.Show("Client has been Registered! Enter vehicle details");
+
+                    pUser.Visible = false;
+                    P_staff.Visible = false;
+                    U_regi_panel.Visible = false;
+                    data_display.Visible = false;
+                    panel_v.Visible = true;
+
                     conn.Close();
+
+                    
                 }
 
-                catch (SqlException es)
+                catch (SqlException)
                 {
-                    MessageBox.Show("Data can not be upload & try again!"+ es);
+                    MessageBox.Show("Data can not be upload & try again!");
                 }
 
             }
@@ -224,6 +260,74 @@ namespace ES_project2
                 MessageBox.Show("Check both passwords & try again!");
             }
 
+            
+
+        }
+        //...........................................................................vehicle regi.........................................
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+
+            String Vid = V_id.Text;
+            String Vtype = v_type.Text;
+            String Vvalue = v_value.Text;
+            String Vmodel = v_model.Text;
+            String Enum = e_num.Text;
+            String Chassi = c_num.Text;
+
+            String start = start_day.Value.ToString();
+            String end = end_day.Value.ToString();
+
+            String insert = "INSERT INTO v_data VALUES ('" + Vid + "' ,'" + Vtype + "', '" + Enum + "', '" + Chassi + "' , '" + start + "' , '" + end + "', '" + Vvalue + "' , '"+Vmodel+"' )";
+            SqlCommand cmd = new SqlCommand(insert, conn);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Client Register Completed!");
+
+                pUser.Visible = false;
+                P_staff.Visible = false;
+                U_regi_panel.Visible = true;
+                panel_v.Visible = false;
+                data_display.Visible = false;
+
+                //..................textBox.Clear(); does not work on bunifu.............
+                //..................so i use this........................................
+                U_id.Text = "";
+                f_name.Text = "";
+                l_name.Text = "";
+                email.Text = "";
+                add.Text = "";
+                f_pass.Text = "";
+                con_pass.Text = "";
+
+
+
+                conn.Close();
+            }
+
+            catch (SqlException)
+            {
+                MessageBox.Show("Data can not be upload & try again!");
+            }
+
+
+        }
+        //............................................................................................check all user data.......................
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM client", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            U_data.DataSource = dt;
+
+            SqlCommand cmd1 = new SqlCommand("SELECT * FROM v_data", conn);
+            SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            Vehi_data.DataSource = dt1;
         }
     }
 }
