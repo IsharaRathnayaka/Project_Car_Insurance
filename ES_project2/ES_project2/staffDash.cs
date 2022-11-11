@@ -434,6 +434,12 @@ namespace ES_project2
         {
             lbl_id.Text = Login.main_id;
         }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            DevInfo info = new DevInfo();
+            info.Show();
+        }
     }
 }
 

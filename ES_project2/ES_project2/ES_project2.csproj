@@ -57,6 +57,18 @@
     <Compile Include="claim.Designer.cs">
       <DependentUpon>claim.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevInfo.Designer.cs">
+      <DependentUpon>DevInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manual.Designer.cs">
+      <DependentUpon>Manual.cs</DependentUpon>
+    </Compile>
     <Compile Include="staffDash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +97,12 @@
     </Compile>
     <EmbeddedResource Include="claim.resx">
       <DependentUpon>claim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevInfo.resx">
+      <DependentUpon>DevInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manual.resx">
+      <DependentUpon>Manual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

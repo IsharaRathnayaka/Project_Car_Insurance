@@ -258,13 +258,13 @@ namespace ES_project2
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Client Has been removed!");
+                MessageBox.Show("Customer Has been removed!");
                 conn.Close();
             }
 
             catch (SqlException)
             {
-                MessageBox.Show("Client removing failed! Try Again!");
+                MessageBox.Show("Customer removing failed! Try Again!");
             }
         }
 
@@ -361,7 +361,8 @@ namespace ES_project2
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
-            //info 
+            DevInfo info = new DevInfo();
+            info.Show();
         }
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
