@@ -371,5 +371,10 @@ namespace ES_project2
             log.Show();
 
         }
+
+        private void adminDash_Load(object sender, EventArgs e)
+        {
+            lbl_id.Text = Login.main_id;
+        }
     }
 }

@@ -22,11 +22,16 @@ namespace ES_project2
             InitializeComponent();
             box_log_pass.isPassword = true;         
         }
+        public static string main_id = ""; // use this id in everywhere
 
         private void bt_login_Click(object sender, EventArgs e)
         {
             String userid = box_id.Text;
-            String userpass = box_log_pass.Text;
+            //String userpass = box_log_pass.Text;
+
+            main_id = userid;
+
+
 
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Project_Insurance_C-\Car_Insurance_DB.mdf;Integrated Security=True;Connect Timeout=30");
 

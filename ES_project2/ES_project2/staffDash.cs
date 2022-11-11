@@ -22,6 +22,7 @@ namespace ES_project2
     public partial class staffDash : Form
     {
         public static string send_id = "";
+        
         public staffDash()
         {
             InitializeComponent();
@@ -371,8 +372,16 @@ namespace ES_project2
         {
             send_id = cust_id.Text;
 
-            claim claim = new claim();
-            claim.Show();
+            if (send_id == "")
+            {
+                MessageBox.Show("Please Enter customer ID");
+            }
+
+            else
+            {
+                claim claim = new claim();
+                claim.Show();
+            }
         }
 
         private void bunifuFlatButton10_Click(object sender, EventArgs e)
@@ -413,6 +422,17 @@ namespace ES_project2
             Login ad = new Login();
             ad.Show();
             this.Close();
+        }
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+        }
+
+        private void staffDash_Load(object sender, EventArgs e)
+        {
+            lbl_id.Text = Login.main_id;
         }
     }
 }
