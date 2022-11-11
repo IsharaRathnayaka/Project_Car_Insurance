@@ -265,7 +265,7 @@ namespace ES_project2
 
                 catch (SqlException)
                 {
-                    MessageBox.Show("Data can not be upload & try again!");
+                    MessageBox.Show("Data can not be saved & try again!");
                 }
 
             }
@@ -373,6 +373,46 @@ namespace ES_project2
 
             claim claim = new claim();
             claim.Show();
+        }
+
+        private void bunifuFlatButton10_Click(object sender, EventArgs e)
+        {
+            String id = cust_id.Text;
+
+            String insert = "DELETE FROM claim WHERE cid = '" + id + "'";
+            SqlCommand cmd = new SqlCommand(insert, conn);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Report has been deleted!");
+                conn.Close();
+            }
+
+            catch (SqlException)
+            {
+                MessageBox.Show("Report delete faild! try again!");
+            }
+        }
+
+        private void bunifuFlatButton12_Click(object sender, EventArgs e)
+        {
+
+            String id = cust_id.Text;
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM claim Where cid = '"+id+"' ", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            cust_data.DataSource = dt;
+        }
+
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+            Login ad = new Login();
+            ad.Show();
+            this.Close();
         }
     }
 }

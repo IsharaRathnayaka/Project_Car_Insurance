@@ -61,7 +61,25 @@ namespace ES_project2
             else if (res == "2")
             {
                 ///////////////////////////////////////////////for staf login ///////////////////////////////////////////////////
-                MessageBox.Show("This is staff");
+
+                String chkquery = "select * from staff where id = '" + box_id.Text.Trim() + "' and password = '" + box_log_pass.Text.Trim() + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(chkquery, conn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows.Count == 1)
+                {
+                    MessageBox.Show("Staff Login successful!");
+                    staffDash ad = new staffDash();
+                    ad.Show();
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("check your password & ID then try again!");
+                }
+
             }
 
             else

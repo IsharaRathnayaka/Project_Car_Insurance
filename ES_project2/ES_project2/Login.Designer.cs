@@ -32,12 +32,12 @@
             this.SlideA = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chkbox = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.box_log_pass = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.box_id = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bt_login = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.line1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -48,6 +48,7 @@
             // 
             // SlideA
             // 
+            this.SlideA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(65)))), ((int)(((byte)(94)))));
             this.SlideA.Controls.Add(this.bunifuCustomLabel4);
             this.SlideA.Controls.Add(this.chkbox);
             this.SlideA.Controls.Add(this.box_log_pass);
@@ -84,17 +85,6 @@
             this.chkbox.Size = new System.Drawing.Size(20, 20);
             this.chkbox.TabIndex = 6;
             this.chkbox.OnChange += new System.EventHandler(this.chkbox_OnChange);
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(218, 88);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(296, 51);
-            this.bunifuCustomLabel3.TabIndex = 5;
-            this.bunifuCustomLabel3.Text = "System Login\r\n";
             // 
             // box_log_pass
             // 
@@ -189,6 +179,18 @@
             this.bt_login.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
             // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(167, 34);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(391, 102);
+            this.bunifuCustomLabel3.TabIndex = 5;
+            this.bunifuCustomLabel3.Text = "LOGIN\r\nCAR INSURANCE";
+            this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.Transparent;
@@ -224,7 +226,7 @@
             this.bunifuImageButton2.InitialImage = null;
             this.bunifuImageButton2.Location = new System.Drawing.Point(-3, 12);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(156, 127);
+            this.bunifuImageButton2.Size = new System.Drawing.Size(124, 99);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton2.TabIndex = 5;
             this.bunifuImageButton2.TabStop = false;
