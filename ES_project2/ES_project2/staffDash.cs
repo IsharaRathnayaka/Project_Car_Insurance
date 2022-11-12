@@ -440,6 +440,12 @@ namespace ES_project2
             DevInfo info = new DevInfo();
             info.Show();
         }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            Manual man = new Manual();
+            man.Show();
+        }
     }
 }
 

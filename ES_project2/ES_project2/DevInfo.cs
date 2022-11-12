@@ -60,7 +60,7 @@ namespace ES_project2
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
     }
 }

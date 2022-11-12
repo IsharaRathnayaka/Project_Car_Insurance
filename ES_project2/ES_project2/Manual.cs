@@ -16,5 +16,15 @@ namespace ES_project2
         {
             InitializeComponent();
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

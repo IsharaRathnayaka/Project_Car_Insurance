@@ -163,6 +163,17 @@ namespace ES_project2
 
         }
 
+        private void bunifuFlatButton10_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM settings", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            AdminShow.DataSource = dt;
+            conn.Close();
+        }
+
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             
@@ -377,5 +388,13 @@ namespace ES_project2
         {
             lbl_id.Text = Login.main_id;
         }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            Manual man = new Manual();
+            man.Show();
+        }
+
+       
     }
 }
