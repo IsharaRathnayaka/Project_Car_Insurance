@@ -327,6 +327,13 @@ namespace ES_project2
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Staff Member has been Registered!");
+                    sid = "";
+                    fname = "";
+                    lname = "";
+                    mail = "";
+                    adres = "";
+                    pass1 = "";
+                    pass2 = "";
                     conn.Close();
                 }
 

@@ -88,13 +88,32 @@ namespace ES_project2
             }
             //...........................................
             // MessageBox.Show(""+reason);
-            String insert = "INSERT INTO claim VALUES('"+id+"' , '"+reason+"' , '"+ispub+"' , '"+Date+"' , '"+mileage+"' , '"+where+"' , '"+d_age+"' , '"+people+"')";
-            SqlCommand cmd = new SqlCommand(insert, conn);
 
+            //.............................................................delete last report.............
+            String insert = "DELETE FROM claim WHERE cid = '"+id+"'";
+            SqlCommand cmd = new SqlCommand(insert, conn);
             try
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            catch(Exception)
+            {
+                MessageBox.Show("old report delete failed! try again!");
+            }
+
+
+            //..........................................................insert new report..............
+
+            String insert2 = "INSERT INTO claim VALUES('"+id+"' , '"+reason+"' , '"+ispub+"' , '"+Date+"' , '"+mileage+"' , '"+where+"' , '"+d_age+"' , '"+people+"')";
+            SqlCommand cmd2 = new SqlCommand(insert2, conn);
+
+            try
+            {
+                conn.Open();
+                cmd2.ExecuteNonQuery();
                 MessageBox.Show("Report Saved!");
               
                 conn.Close();
